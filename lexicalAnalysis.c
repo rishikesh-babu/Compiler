@@ -29,7 +29,7 @@ int isHeader(char *word) {
 }
 
 int isOperator(char c) { 
-    char operators[] = {'+', '-', '*', '/', '<', '>', '=', '|', '&'}; 
+    char operators[] = {'+', '-', '*', '/', '<', '>', '=', '|', '&', '%'}; 
     int length = sizeof(operators) / sizeof(operators[0]); 
 
     for (int i = 0; i < length; ++i) { 
@@ -89,16 +89,21 @@ int main() {
                 }
                 
                 if (isNumber) { 
-                    printf("<NUMBER, %s> \n", word); 
+                    printf("<number, %s> \n", word); 
+                    fprintf(output, "<number, %s> \n", word); 
                 } else { 
                     if (isKeyword(word)) { 
-                        printf("<KEYWORD, %s> \n", word); 
+                        printf("<keyword, %s> \n", word); 
+                        fprintf(output, "<keyword, %s> \n", word); 
                     } else if (word[0] == '#') {
-                        printf("<PREPROCESSOR, %s> \n", word); 
+                        printf("<preprocessor, %s> \n", word); 
+                        fprintf(output, "<preprocessor, %s> \n", word); 
                     } else if (isHeader(word)) {
-                        printf("<HEADER, %s> \n", word); 
+                        printf("<header, %s> \n", word); 
+                        fprintf(output, "<header, %s> \n", word); 
                     } else { 
-                        printf("<IDENTIFIERS, %s> \n", word); 
+                        printf("<identifier, %s> \n", word); 
+                        fprintf(output, "<identifier, %s> \n", word); 
                     }
                 }
             }
@@ -108,11 +113,14 @@ int main() {
                 c = line[i]; 
                 
                 if (isPunctuators(c)) { 
-                    printf("<PUNCTUATOR, %c> \n", c); 
+                    printf("<punctuator, %c> \n", c); 
+                    fprintf(output, "<punctuator, %c> \n", c); 
                 } else if (isOperator(c)) {
-                    printf("<OPERATOR, %c> \n", c); 
+                    printf("<operator, %c> \n", c); 
+                    fprintf(output, "<operators, %c> \n", c); 
                 } else { 
-                    printf("<INVALID, %c> \n", c); 
+                    printf("<invalid, %c> \n", c); 
+                    fprintf(output, "<invalid, %c> \n", c); 
                 } 
                 
                 ++i; 

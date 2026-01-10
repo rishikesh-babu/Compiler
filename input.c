@@ -1,8 +1,14 @@
-#include <stdio.h> 
+#include <stdio.h>
 
-void main() { 
-    int i = 0; 
-    while (i < 10) { 
-        i++; 
+void main() {
+    int i;
+    int even = 0;
+    int odd = 0;
+
+    for (i = 1; i <= 10; i++) {
+        if (i % 2 == 0)
+            even++;
+        else
+            odd++;
     }
 }
