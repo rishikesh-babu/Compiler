@@ -29,7 +29,7 @@
 <identifier, i> 
 <operators, <> 
 <operators, => 
-<number, 10> 
+<number, 1.0> 
 <punctuator, ;> 
 <identifier, i> 
 <operators, +> 

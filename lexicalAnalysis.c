@@ -82,7 +82,7 @@ int main() {
             if (j > 0) { 
                 int isNumber = 1; 
                 for (int i = 0; i < word[i] != '\0'; ++i) { 
-                    if (!isdigit(word[i])) { 
+                    if (!isdigit(word[i]) && word[i] != '.') { 
                         isNumber = 0; 
                         break; 
                     }
