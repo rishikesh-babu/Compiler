@@ -29,7 +29,7 @@ int isHeader(char *word) {
 }
 
 int isOperator(char c) { 
-    char operators[] = {'+', '-', '*', '/', '<', '>', '=', '|', '&', '%'}; 
+    char operators[] = {'+', '-', '*', '/', '<', '>', '=', '|', '&', '%', '!'}; 
     int length = sizeof(operators) / sizeof(operators[0]); 
 
     for (int i = 0; i < length; ++i) { 
